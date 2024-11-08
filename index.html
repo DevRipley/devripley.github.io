@@ -1,60 +1,36 @@
-<!-- 
-    ¡Atención! Este código es propiedad de [DevRipley (Luis Dariel Estrella Camacho)]! 
-    Si copias esto sin permiso, ¡prepárate para las consecuencias! 😄
-    
-    Esta es una tarea by DevAlejandro!
--->
-
 <!DOCTYPE html>
 <html lang="es">
-<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-<link rel="manifest" href="site.webmanifest">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DevRipley - Portafolio</title>
 
-    <!- Fuente Poppins Google -!>
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    
-    <!- Fa fa Icons -!>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    
-    <!- Llamada al CSS -!>
     <link rel="stylesheet" href="styles.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("a").on('click', function(event) {
+                if (this.hash !== "") {
+                    event.preventDefault();
+                    var hash = this.hash;
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 800, function(){
+                        window.location.hash = hash;
+                    });
+                }
+            });
+        });
+    </script>
 </head>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script>
-$(document).ready(function(){
-  // Add smooth scrolling to all links
-  $("a").on('click', function(event) {
-
-    // Make sure this.hash has a value before overriding default behavior
-    if (this.hash !== "") {
-      // Prevent default anchor click behavior
-      event.preventDefault();
-
-      // Store hash
-      var hash = this.hash;
-
-      // Using jQuery's animate() method to add smooth page scroll
-      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
-      $('html, body').animate({
-        scrollTop: $(hash).offset().top
-      }, 800, function(){
-
-        // Add hash (#) to URL when done scrolling (default click behavior)
-        window.location.hash = hash;
-      });
-    } // End if
-  });
-});
-</script>
-
 <body>
     <header>
         <div class="container">
@@ -73,13 +49,12 @@ $(document).ready(function(){
 
     <main class="container">
 
-        <!-- Sobre mi -->
         <section id="sobre-mi">
             <h2>Sobre mí</h2>
             <div class="about-content">
                 <img src="https://avatars.githubusercontent.com/u/82556875?v=4" alt="DevRipley" class="profile-image">
                 <div>
-                    <h1>Quien es DevRipley?</h3>
+                    <h1>Quien es DevRipley?</h1>
                     <p>Hola, Soy DevRipley tengo +5 años de experiencia. Ingeniero de Software y Gestor de Proyectos de Republica Dominicana. Especializado en el desarrollo de software y sitios web únicas.</p>
                     <h3>Objetivos profesionales</h3>
                     <ul>
@@ -91,7 +66,6 @@ $(document).ready(function(){
             </div>
         </section>
 
-        <!-- Educacion -->
         <section id="educacion">
             <h2>Educación</h2>
             <div class="education-item">
@@ -110,7 +84,6 @@ $(document).ready(function(){
             </div>
         </section>
 
-        <!-- Habilidades -->
         <section id="habilidades">
             <h2>Habilidades</h2>
             <div class="skills-grid">
@@ -142,7 +115,6 @@ $(document).ready(function(){
             </div>
         </section>
 
-        <!-- Proyectos -->
         <section id="proyectos">
             <h2>Proyectos</h2>
             <div class="project-card">
@@ -150,28 +122,24 @@ $(document).ready(function(){
                 <i class="fa fa-html5" style="font-size:24px;color: rgb(255, 115, 0);"></i> HTML
                 <i class="fa fa-css3" style="font-size:24px;color: rgb(0, 119, 255);"></i> CSS
                 <p>Este sitio web que estás viendo ahora mismo.</p>
-        
                 <img src="/img/project.jpg" alt="Captura de pantalla del portafolio" class="project-image">
-        
-                <!-- Botón debajo de la imagen -->
                 <a href="https://github.com/devripley/mi-portafolio" class="project-link">Ver en GitHub</a>
             </div>
         </section>
 
-        <!-- Contacto -->
         <section id="contacto">
             <h2>Contacto</h2>
             <div class="contact-links">
                 <a href="mailto:devripley@estrella.services" class="contact-item">
-                    <i class="fa fa-envelope" style="font-size:24px;color: black;"></i> 
+                    <i class="fa fa-envelope" style="font-size:24px;color: black;"></i>
                     <span> Email</span>
                 </a>
                 <a href="https://linkedin.com/in/devripley" class="contact-item">
-                    <i class="fa fa-linkedin" style="font-size:24px;color: black;"></i> 
+                    <i class="fa fa-linkedin" style="font-size:24px;color: black;"></i>
                     <span>LinkedIn</span>
                 </a>
                 <a href="https://github.com/devripley" class="contact-item">
-                    <i class="fa fa-github" style="font-size:24px;color: black;"></i>  
+                    <i class="fa fa-github" style="font-size:24px;color: black;"></i>
                     <span>GitHub</span>
                 </a>
             </div>
@@ -185,39 +153,3 @@ $(document).ready(function(){
     </footer>
 </body>
 </html>
-
-
-<!-- 
-    ¡Atención! Este código es propiedad de [DevRipley (Luis Dariel Estrella Camacho)]! 
-    Si copias esto sin permiso, ¡prepárate para las consecuencias! 😄 
--->
-
-<!-- 
-    ¡Atención! Este código es propiedad de [DevRipley (Luis Dariel Estrella Camacho)]! 
-    Si copias esto sin permiso, ¡prepárate para las consecuencias! 😄 
--->
-
-<!-- 
-    ¡Atención! Este código es propiedad de [DevRipley (Luis Dariel Estrella Camacho)]! 
-    Si copias esto sin permiso, ¡prepárate para las consecuencias! 😄 
--->
-
-<!-- 
-    ¡Atención! Este código es propiedad de [DevRipley (Luis Dariel Estrella Camacho)]! 
-    Si copias esto sin permiso, ¡prepárate para las consecuencias! 😄 
--->
-
-<!-- 
-    ¡Atención! Este código es propiedad de [DevRipley (Luis Dariel Estrella Camacho)]! 
-    Si copias esto sin permiso, ¡prepárate para las consecuencias! 😄 
--->
-
-<!-- 
-    ¡Atención! Este código es propiedad de [DevRipley (Luis Dariel Estrella Camacho)]! 
-    Si copias esto sin permiso, ¡prepárate para las consecuencias! 😄 
--->
-
-<!-- 
-    ¡Atención! Este código es propiedad de [DevRipley (Luis Dariel Estrella Camacho)]! 
-    Si copias esto sin permiso, ¡prepárate para las consecuencias! 😄 
--->
