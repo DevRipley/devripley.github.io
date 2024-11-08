@@ -315,7 +315,7 @@ footer {
 
 /* Estilos para pantallas pequeñas */
 @media (max-width: 768px) {
-    .contact-methods {
+    .contact-methods, .contact-links {
         flex-direction: column;
         align-items: stretch;
     }
@@ -327,7 +327,9 @@ footer {
     
     .contact-links {
         margin-bottom: 20px;
+        align-content: center;
     }
+
     header nav ul {
         flex-direction: column;
         gap: 10px;
