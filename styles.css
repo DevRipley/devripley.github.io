@@ -36,10 +36,6 @@
     Si copias esto sin permiso, ¡prepárate para las consecuencias! 😄 
 --> */
 
-html, body {
-    scroll-behavior: smooth;
-}
-
 body {
     font-family: 'Poppins', sans-serif;
     line-height: 1.6;
