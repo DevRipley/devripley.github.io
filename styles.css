@@ -6,9 +6,8 @@
 /* Importa una fuente moderna */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
-
 html, body {
-    scroll-behavior: smooth; /*Para que funcione bien*/
+    scroll-behavior: smooth; /*Solo para navegadores soportados*/
 }
 
 body {
@@ -23,7 +22,7 @@ body {
 .container {
     width: 85%;
     max-width: 1200px;
-    margin: auto;
+    margin: 0 auto; /* Centrado horizontal */
     overflow: hidden;
     padding: 20px;
 }
@@ -43,8 +42,8 @@ header .container {
 }
 
 header h1 {
-    margin-left: 0px;
-    padding: 0px;
+    margin: 0; /* Reset margins */
+    padding: 0;
     font-size: 24px;
 }
 
@@ -53,7 +52,7 @@ header nav ul {
     margin: 0;
     list-style: none;
     display: flex;
-    gap: 20px; /* Espacio entre los elementos del menú */
+    gap: 20px;
 }
 
 header nav a {
@@ -62,11 +61,11 @@ header nav a {
     font-weight: 500;
     padding: 8px 15px;
     border-radius: 5px;
-    transition: background 0.3s, color 0.3s;
+    transition: background-color 0.3s, color 0.3s; /* Mejor nombrado */
 }
 
 header nav a:hover {
-    background: #5200be;
+    background-color: #5200be; /* Mejor nombrado */
     color: #fff;
 }
 
@@ -173,9 +172,43 @@ h2 {
 /* Contacto */
 .contact-links {
     display: flex;
-    justify-content: space-around;
     flex-wrap: wrap;
     gap: 15px;
+    flex: 1;
+}
+
+.contact-methods {
+    display: flex; /* Muestra los enlaces y el formulario uno al lado del otro */
+    justify-content: space-between; /* Distribuye el espacio entre ellos */
+    gap: 20px; /* Espacio entre los elementos */
+    flex-wrap: wrap;
+}
+
+.contact-form {
+    flex: 1; /* Ocupa el 50% del espacio */
+
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        label {
+            /* ... */
+        }
+        input, textarea {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    }
 }
 
 .contact-item {
@@ -191,12 +224,12 @@ h2 {
 }
 
 .contact-item i {
-    margin-bottom: 5px; /* Centrar el texto a el espacio */
-    margin-right: 8px; /* Agrega espacio entre el icono y el texto */
+    margin-bottom: 5px;
+    margin-right: 8px;
 }
 
 .contact-item span {
-    font-size: 16px; /* Ajusta el tamaño del texto si es necesario */
+    font-size: 16px;
 }
 
 .contact-item:hover {
@@ -216,8 +249,21 @@ footer {
     font-size: 14px;
 }
 
-/* Responsive */
-@media(max-width: 768px) {
+/* Estilos para pantallas pequeñas */
+@media (max-width: 768px) {
+    .contact-methods {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .contact-links, .contact-form {
+        flex: 1 1 100%;
+        min-width: auto;
+    }
+    
+    .contact-links {
+        margin-bottom: 20px;
+    }
     header nav ul {
         flex-direction: column;
         gap: 10px;
@@ -230,5 +276,21 @@ footer {
 
     .profile-image {
         margin-bottom: 20px;
+        width: 150px;
+        height: 150px;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-card {
+        width: calc(100% - 40px);
+        margin: 20px auto;
+        box-sizing: border-box;
+    }
+
+    .project-image {
+        max-width: 90%;
     }
 }
